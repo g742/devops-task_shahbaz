@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: swayatt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: swayatt
+  template:
+    metadata:
+      labels:
+        app: swayatt
+    spec:
+      containers:
+        - name: swayatt
+          image: golushbz/shahbaz:latest
+          ports:
+            - containerPort: 3000
